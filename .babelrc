@@ -10,5 +10,10 @@
   "plugins": [
     "external-helpers",
     "transform-async-to-generator"
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["istanbul"]
+    }
+  }
 }

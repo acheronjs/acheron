@@ -1,4 +1,5 @@
 ROLLUP = ./node_modules/.bin/rollup
+KARMAJS = ./node_modules/karma/bin/karma
 
 all: es6 umd umd-min
 
@@ -18,3 +19,7 @@ dist/es.acheron.js dist/es.acheron.js.map: src/*.js
 clean:
 	rm -rf dist
 	rm -rf *.log
+
+test:
+	NODE_ENV=test $(KARMAJS) start --single-run
+.PHONY: test

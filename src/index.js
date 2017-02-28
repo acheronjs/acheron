@@ -1,1 +1,5 @@
-export default {}
+export default {
+  run () {
+    console.log('ok')
+  }
+}
