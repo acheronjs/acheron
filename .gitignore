@@ -1,0 +1,18 @@
+### Linux ###
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+### Node ###
+dist
+coverage
+node_modules/
+*.log

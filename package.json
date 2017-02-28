@@ -1,0 +1,26 @@
+{
+  "name": "acheron",
+  "version": "1.0.0",
+  "description": "A javascript event bus with rpc support",
+  "browser": "dist/acheron.js",
+  "main": "dist/common.acheron.js",
+  "module": "dist/es.acheron.js",
+  "jsnext:main": "dist/es.acheron.js",
+  "keywords": [
+    "pub/sub",
+    "pub",
+    "sub",
+    "rpc",
+    "messaging",
+    "message",
+    "bus",
+    "event",
+    "broker"
+  ],
+  "repository": {
+    "url": "git://github.com/acheronjs/acheron.git",
+    "type": "git"
+  },
+  "author": "Rudinei Goi Roecker <rudinei.roecker@gmail.com>",
+  "license": "MIT"
+}
