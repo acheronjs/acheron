@@ -8,8 +8,7 @@
     ]
   ],
   "plugins": [
-    "external-helpers",
-    "transform-async-to-generator"
+    "external-helpers"
   ],
   "env": {
     "test": {
