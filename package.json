@@ -1,6 +1,6 @@
 {
   "name": "acheron",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A javascript event bus with rpc support",
   "browser": "dist/acheron.js",
   "main": "dist/acheron.js",
