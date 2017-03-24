@@ -4,13 +4,13 @@ A lightweight javascript event bus with rpc support.
 
 ## Resources
 
-* [Description](#Description)
-* [Installation](#Installation)
-* [Usage](#Usage)
-  * [Publish/Subscribe](#PublishSubscribe)
-  * [RPC](#RPC)
-  * [Promises](#Promises)
-* [Roadmap](#Roadmap)
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+  * [Publish/Subscribe](#publishsubscribe)
+  * [RPC](#rpc)
+  * [Promises](#promises)
+* [Roadmap](#roadmap)
 
 ## Description
 
