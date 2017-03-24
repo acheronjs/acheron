@@ -1,6 +1,6 @@
 import xs from 'xstream'
 
-let promiseCon = Promise
+let PromiseLib = Promise
 let producers = {}
 let streams = {}
 
@@ -18,7 +18,7 @@ class Producer {
 
   method (method) {
     function methodFn (...args) {
-      let reply = new promiseCon((resolve) => {
+      let reply = new PromiseLib((resolve) => {
         this.listener.next({
           channel: this.channel,
           topic: 'rpc',
@@ -32,7 +32,7 @@ class Producer {
     return methodFn.bind(this)
   }
 
-  publish (topic) {
+  topic (topic) {
     return (body) => {
       this.listener.next({
         channel: this.channel,
@@ -61,7 +61,7 @@ function makeChannel (channel) {
 
 export default {
   setPromiseImplementation: function (promise) {
-    promiseCon = promise
+    PromiseLib = promise
   },
   producer: function (channel) {
     makeChannel(channel)
