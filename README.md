@@ -9,6 +9,7 @@ A lightweight javascript event bus with rpc support.
 * [Usage](#Usage)
   * [Publish/Subscribe](#PublishSubscribe)
   * [RPC](#RPC)
+  * [Promises](#Promises)
 * [Roadmap](#Roadmap)
 
 ## Description
@@ -21,7 +22,7 @@ The name Acheron came from one of the 4 rivers from the realm of Hades, from
 greek mythology. The idea is that the messages should flow with the stream.
 
 The only dependency required to use this lib is
-[xstream](https://github.com/staltz/xstream), the library that powers
+[Xstream](https://github.com/staltz/xstream), the library that powers
 [Cycle.JS](https://cycle.js.org/).
 
 ## Installation
@@ -74,6 +75,11 @@ var publishLog = producer.topic('log')
 publishLog({'log': 'data'})
 ```
 
+The streams returned are raw [Xstream](https://github.com/staltz/xstream)
+streams, so you can use any method available. For example, you can create
+a message pre-processor using the stream's map method. How to do this and
+more can be found on the Xstream docs.
+
 ### RPC
 
 RPCs in Acheron are an extension to the publish/subscribe model. They use the
@@ -105,6 +111,19 @@ getRpcMethod('hello', 'world', {'arg': 3})
 
 // You can also use the async/await syntax if it's available in your environment
 let resp = await getRpcMethod('hello', 'world', {'arg': 3})
+```
+
+### Promises
+
+If you want to use a Promise polyfill library or use an implentation other
+than the native, you can set the promise constructor like this:
+
+```javascript
+var bluebird = require('bluebird')
+var acheron = require('acheron')
+
+// Set acheron to use Bluebird to create promises
+acheron.setPromiseImplementation(bluebird)
 ```
 
 ## Roadmap
