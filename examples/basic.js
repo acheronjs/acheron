@@ -1,21 +1,23 @@
 var acheron = require('../dist/acheron.js')
 
+var CHANNEL_NAME = 'channel.name'
+
 function runPublisher () {
   // The first thing you need to create is a stream
   // Streams are named channels in which your messages flow
-  var stream = acheron.stream('channel.name')
+  var stream = acheron.stream(CHANNEL_NAME)
 
   // Next you need to create a listener for your messages
   // In this case we will be filtering messages by the topic 'log'
   stream
-  	.filter((msg) => msg.topic === 'log')
-	  .addListener({ next: (msg) => {
-  		console.log('msg received:', msg)
-	  }})
+    .filter((msg) => msg.topic === 'log')
+    .addListener({ next: (msg) => {
+      console.log('msg received:', msg)
+    }})
 
   // After all listeners were configured, you can start publishing messages
   // Fist we have to create a message producer for the stream we configured before
-  var producer = acheron.producer('channel.name')
+  var producer = acheron.producer(CHANNEL_NAME)
 
   // The we make the message topic sender
   var publishLog = producer.topic('log')
@@ -24,7 +26,7 @@ function runPublisher () {
   publishLog({'log': 'data'})
 }
 
-function runRpc() {
+function runRpc () {
   // Add rpc method listener
   acheron.rpc(CHANNEL_NAME, 'get', (str1, str2, obj) => {
     console.log('call args:', [str1, str2, obj])
