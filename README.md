@@ -87,7 +87,7 @@ import acheron from 'acheron'
 // You don't need to create the stream, Acheron creates it for you
 acheron.rpc(CHANNEL_NAME, 'get', (str1, str2, obj) => {
   console.log('call args:', [str1, str2, obj])
-	return 'rpc call response'
+  return 'rpc call response'
 })
 
 // Then create a message producer
@@ -99,9 +99,9 @@ let getRpcMethod = producer.method('get')
 // Finally you call the method
 // The method call returns a promise of the response
 getRpcMethod('hello', 'world', {'arg': 3})
-	.then((resp) => {
-		console.log('call resp:', resp)
-	})
+  .then((resp) => {
+    console.log('call resp:', resp)
+  })
 
 // You can also use the async/await syntax if it's available in your environment
 let resp = await getRpcMethod('hello', 'world', {'arg': 3})
