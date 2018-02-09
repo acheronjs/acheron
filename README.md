@@ -2,6 +2,10 @@
 
 A lightweight javascript event bus with rpc support.
 
+## NOTICE
+
+This library is not being maintained anymore, please use other solutions like [CycleJS](https://cycle.js.org/) or [RxJS](http://reactivex.io/rxjs/).
+
 ## Resources
 
 * [Description](#description)
